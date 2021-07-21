@@ -3,27 +3,47 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5E1EF91D26A7172D0003C280 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EF91C26A7172D0003C280 /* AppDelegate.swift */; };
 		5E1EF91F26A7172D0003C280 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EF91E26A7172D0003C280 /* SceneDelegate.swift */; };
-		5E1EF92126A7172D0003C280 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EF92026A7172D0003C280 /* ViewController.swift */; };
 		5E1EF92426A7172D0003C280 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1EF92226A7172D0003C280 /* Main.storyboard */; };
 		5E1EF92626A717300003C280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1EF92526A717300003C280 /* Assets.xcassets */; };
 		5E1EF92926A717300003C280 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1EF92726A717300003C280 /* LaunchScreen.storyboard */; };
+		5E1EF93726A751310003C280 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EF93626A751310003C280 /* AuthService.swift */; };
+		5E1EF93D26A758CF0003C280 /* VKSdkFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1EF93C26A758CF0003C280 /* VKSdkFramework.xcframework */; };
+		5E1EF93E26A758CF0003C280 /* VKSdkFramework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1EF93C26A758CF0003C280 /* VKSdkFramework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5E1EF94226A7666E0003C280 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EF94126A7666D0003C280 /* AuthViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5E1EF93F26A758CF0003C280 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5E1EF93E26A758CF0003C280 /* VKSdkFramework.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5E1EF91926A7172D0003C280 /* MobileUpTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileUpTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1EF91C26A7172D0003C280 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E1EF91E26A7172D0003C280 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5E1EF92026A7172D0003C280 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5E1EF92326A7172D0003C280 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E1EF92526A717300003C280 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E1EF92826A717300003C280 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E1EF92A26A717300003C280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E1EF93226A74E040003C280 /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
+		5E1EF93626A751310003C280 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		5E1EF93C26A758CF0003C280 /* VKSdkFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VKSdkFramework.xcframework; path = Carthage/Build/VKSdkFramework.xcframework; sourceTree = "<group>"; };
+		5E1EF94126A7666D0003C280 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E1EF93D26A758CF0003C280 /* VKSdkFramework.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +63,7 @@
 			children = (
 				5E1EF91B26A7172D0003C280 /* MobileUpTest */,
 				5E1EF91A26A7172D0003C280 /* Products */,
+				5E1EF93126A74E040003C280 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +78,41 @@
 		5E1EF91B26A7172D0003C280 /* MobileUpTest */ = {
 			isa = PBXGroup;
 			children = (
+				5E1EF94026A766440003C280 /* Auth */,
 				5E1EF91C26A7172D0003C280 /* AppDelegate.swift */,
+				5E1EF93826A751470003C280 /* Services */,
 				5E1EF91E26A7172D0003C280 /* SceneDelegate.swift */,
-				5E1EF92026A7172D0003C280 /* ViewController.swift */,
 				5E1EF92226A7172D0003C280 /* Main.storyboard */,
 				5E1EF92526A717300003C280 /* Assets.xcassets */,
 				5E1EF92726A717300003C280 /* LaunchScreen.storyboard */,
 				5E1EF92A26A717300003C280 /* Info.plist */,
 			);
 			path = MobileUpTest;
+			sourceTree = "<group>";
+		};
+		5E1EF93126A74E040003C280 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E1EF93C26A758CF0003C280 /* VKSdkFramework.xcframework */,
+				5E1EF93226A74E040003C280 /* VKSdkFramework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E1EF93826A751470003C280 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5E1EF93626A751310003C280 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5E1EF94026A766440003C280 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				5E1EF94126A7666D0003C280 /* AuthViewController.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +125,7 @@
 				5E1EF91526A7172D0003C280 /* Sources */,
 				5E1EF91626A7172D0003C280 /* Frameworks */,
 				5E1EF91726A7172D0003C280 /* Resources */,
+				5E1EF93F26A758CF0003C280 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,9 +186,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E1EF92126A7172D0003C280 /* ViewController.swift in Sources */,
 				5E1EF91D26A7172D0003C280 /* AppDelegate.swift in Sources */,
+				5E1EF94226A7666E0003C280 /* AuthViewController.swift in Sources */,
 				5E1EF91F26A7172D0003C280 /* SceneDelegate.swift in Sources */,
+				5E1EF93726A751310003C280 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +338,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDR7T3U5EH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MobileUpTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +351,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Vecher13.MobileUpTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -307,7 +363,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDR7T3U5EH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MobileUpTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +376,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Vecher13.MobileUpTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
