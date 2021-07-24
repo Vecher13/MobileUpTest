@@ -27,9 +27,6 @@ final class NetworkService: Networking {
         allParams["v"] = API.version
         let url = self.url(from: path, params: allParams)
         let request = URLRequest(url: url)
-            DispatchQueue.main.async {
-                completion(data, error)
-            }
         let task = createDataTask(from: request, completion: completion)
         task.resume()
         print(url)
