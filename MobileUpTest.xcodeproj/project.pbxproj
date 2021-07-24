@@ -16,6 +16,9 @@
 		5E1EF93D26A758CF0003C280 /* VKSdkFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1EF93C26A758CF0003C280 /* VKSdkFramework.xcframework */; };
 		5E1EF93E26A758CF0003C280 /* VKSdkFramework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1EF93C26A758CF0003C280 /* VKSdkFramework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5E1EF94226A7666E0003C280 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EF94126A7666D0003C280 /* AuthViewController.swift */; };
+		5E1EF94426A89BF60003C280 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EF94326A89BF60003C280 /* GalleryViewController.swift */; };
+		5E1EF94726A978F90003C280 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EF94626A978F90003C280 /* NetworkService.swift */; };
+		5E1EF94926A9B0D60003C280 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EF94826A9B0D60003C280 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +47,9 @@
 		5E1EF93626A751310003C280 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5E1EF93C26A758CF0003C280 /* VKSdkFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VKSdkFramework.xcframework; path = Carthage/Build/VKSdkFramework.xcframework; sourceTree = "<group>"; };
 		5E1EF94126A7666D0003C280 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		5E1EF94326A89BF60003C280 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		5E1EF94626A978F90003C280 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		5E1EF94826A9B0D60003C280 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,12 +84,14 @@
 		5E1EF91B26A7172D0003C280 /* MobileUpTest */ = {
 			isa = PBXGroup;
 			children = (
+				5E1EF94526A976500003C280 /* Gallery */,
 				5E1EF94026A766440003C280 /* Auth */,
-				5E1EF91C26A7172D0003C280 /* AppDelegate.swift */,
 				5E1EF93826A751470003C280 /* Services */,
 				5E1EF91E26A7172D0003C280 /* SceneDelegate.swift */,
+				5E1EF94326A89BF60003C280 /* GalleryViewController.swift */,
 				5E1EF92226A7172D0003C280 /* Main.storyboard */,
 				5E1EF92526A717300003C280 /* Assets.xcassets */,
+				5E1EF91C26A7172D0003C280 /* AppDelegate.swift */,
 				5E1EF92726A717300003C280 /* LaunchScreen.storyboard */,
 				5E1EF92A26A717300003C280 /* Info.plist */,
 			);
@@ -103,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				5E1EF93626A751310003C280 /* AuthService.swift */,
+				5E1EF94626A978F90003C280 /* NetworkService.swift */,
+				5E1EF94826A9B0D60003C280 /* API.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -113,6 +123,13 @@
 				5E1EF94126A7666D0003C280 /* AuthViewController.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		5E1EF94526A976500003C280 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gallery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,8 +205,11 @@
 			files = (
 				5E1EF91D26A7172D0003C280 /* AppDelegate.swift in Sources */,
 				5E1EF94226A7666E0003C280 /* AuthViewController.swift in Sources */,
+				5E1EF94426A89BF60003C280 /* GalleryViewController.swift in Sources */,
 				5E1EF91F26A7172D0003C280 /* SceneDelegate.swift in Sources */,
+				5E1EF94726A978F90003C280 /* NetworkService.swift in Sources */,
 				5E1EF93726A751310003C280 /* AuthService.swift in Sources */,
+				5E1EF94926A9B0D60003C280 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

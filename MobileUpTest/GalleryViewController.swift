@@ -1,30 +1,22 @@
 //
-//  AuthViewController.swift
+//  GalleryViewController.swift
 //  MobileUpTest
 //
-//  Created by Ash on 20.07.2021.
+//  Created by Ash on 21.07.2021.
 //
 
 import UIKit
 
-class AuthViewController: UIViewController {
-    @IBOutlet var label: UILabel!
-    @IBOutlet var button: UIButton!
-    
-    private var authService: AuthService!
-    
+class GalleryViewController: UIViewController {
+
+    private let networkService = NetworkService()
     override func viewDidLoad() {
         super.viewDidLoad()
-        label.text = "Mobile Up \nGallery"
-        button.layer.cornerRadius = 8
-        authService = SceneDelegate.shared().authService
+        networkService.getData()
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func signInTouch(_ sender: Any) {
-        authService.wakeUpSession()
-    }
-    
+
     /*
     // MARK: - Navigation
 
