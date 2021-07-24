@@ -19,6 +19,8 @@
 		5E1EF94426A89BF60003C280 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EF94326A89BF60003C280 /* GalleryViewController.swift */; };
 		5E1EF94726A978F90003C280 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EF94626A978F90003C280 /* NetworkService.swift */; };
 		5E1EF94926A9B0D60003C280 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EF94826A9B0D60003C280 /* API.swift */; };
+		5E5F27BD26AC4FE400DB7A95 /* ResponseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F27BC26AC4FE400DB7A95 /* ResponseDataModel.swift */; };
+		5E5F27C026AC77A700DB7A95 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F27BF26AC77A700DB7A95 /* NetworkDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +52,8 @@
 		5E1EF94326A89BF60003C280 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		5E1EF94626A978F90003C280 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5E1EF94826A9B0D60003C280 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		5E5F27BC26AC4FE400DB7A95 /* ResponseDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDataModel.swift; sourceTree = "<group>"; };
+		5E5F27BF26AC77A700DB7A95 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,14 +88,13 @@
 		5E1EF91B26A7172D0003C280 /* MobileUpTest */ = {
 			isa = PBXGroup;
 			children = (
+				5E1EF91C26A7172D0003C280 /* AppDelegate.swift */,
+				5E1EF91E26A7172D0003C280 /* SceneDelegate.swift */,
+				5E1EF92226A7172D0003C280 /* Main.storyboard */,
 				5E1EF94526A976500003C280 /* Gallery */,
 				5E1EF94026A766440003C280 /* Auth */,
 				5E1EF93826A751470003C280 /* Services */,
-				5E1EF91E26A7172D0003C280 /* SceneDelegate.swift */,
-				5E1EF94326A89BF60003C280 /* GalleryViewController.swift */,
-				5E1EF92226A7172D0003C280 /* Main.storyboard */,
 				5E1EF92526A717300003C280 /* Assets.xcassets */,
-				5E1EF91C26A7172D0003C280 /* AppDelegate.swift */,
 				5E1EF92726A717300003C280 /* LaunchScreen.storyboard */,
 				5E1EF92A26A717300003C280 /* Info.plist */,
 			);
@@ -110,9 +113,11 @@
 		5E1EF93826A751470003C280 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5E5F27BE26AC742600DB7A95 /* Models */,
 				5E1EF93626A751310003C280 /* AuthService.swift */,
 				5E1EF94626A978F90003C280 /* NetworkService.swift */,
 				5E1EF94826A9B0D60003C280 /* API.swift */,
+				5E5F27BF26AC77A700DB7A95 /* NetworkDataFetcher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -128,8 +133,17 @@
 		5E1EF94526A976500003C280 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
+				5E1EF94326A89BF60003C280 /* GalleryViewController.swift */,
 			);
 			path = Gallery;
+			sourceTree = "<group>";
+		};
+		5E5F27BE26AC742600DB7A95 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5E5F27BC26AC4FE400DB7A95 /* ResponseDataModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +221,9 @@
 				5E1EF94226A7666E0003C280 /* AuthViewController.swift in Sources */,
 				5E1EF94426A89BF60003C280 /* GalleryViewController.swift in Sources */,
 				5E1EF91F26A7172D0003C280 /* SceneDelegate.swift in Sources */,
+				5E5F27BD26AC4FE400DB7A95 /* ResponseDataModel.swift in Sources */,
 				5E1EF94726A978F90003C280 /* NetworkService.swift in Sources */,
+				5E5F27C026AC77A700DB7A95 /* NetworkDataFetcher.swift in Sources */,
 				5E1EF93726A751310003C280 /* AuthService.swift in Sources */,
 				5E1EF94926A9B0D60003C280 /* API.swift in Sources */,
 			);

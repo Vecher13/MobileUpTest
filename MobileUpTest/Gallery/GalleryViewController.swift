@@ -9,11 +9,14 @@ import UIKit
 
 class GalleryViewController: UIViewController {
 
-    private let networkService = NetworkService()
+    private let fetcher: DataFetcher = NetworkDataFetcher(networking: NetworkService())
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkService.getData()
-        // Do any additional setup after loading the view.
+      
+        fetcher.getPhotosFromGallery { <#Response?#> in
+            <#code#>
+        }
+        
     }
     
 
