@@ -6,15 +6,19 @@
 //
 
 import UIKit
+import Foundation
+import Photos
 
 class FullScreenViewController: UIViewController {
-
+    
     @IBOutlet var saveButton: UIBarButtonItem!
     @IBOutlet var collectionView: UICollectionView!
     private let photoFether = NetworkPhotoFetcher.shared
-    
+    var imageTake: UIImageView? = nil
     var items: [Item] = []
     var indexPath: IndexPath? = nil
+    var imageURL: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -30,26 +34,43 @@ class FullScreenViewController: UIViewController {
         }
     }
     
-    @IBAction func saveAction(_ sender: Any) {
-        let cell = collectionView.visibleCells.first
-        scrollViewDidEndDecelerating(collectionView)
-        print()
-    }
-  
     
-
+    @IBAction func saveAction(_ sender: UIBarItem) {
+        
+        guard let url = self.imageURL else {return}
+        photoFether.getImage(url: url) { image in
+            
+            self.weiteToPhotoAlbom(image: image)
+            
+        }
+        print("lskdjflkj")
+    }
+    
+    
+    //MARK: - identify the cell
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         var visibleRect = CGRect()
-
+        
         visibleRect.origin = collectionView.contentOffset
         visibleRect.size = collectionView.bounds.size
-
+        
         let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
-
+        
         guard let indexPath = collectionView.indexPathForItem(at: visiblePoint) else { return }
-        self.title = "\(indexPath.row)"
-        print(indexPath)
+        
+        
+        let time = items[indexPath.row].date
+        self.imageURL = items[indexPath.row].sizes[6].url
+        self.title = date(from: time)
+        self.indexPath = indexPath
+    }
+    
+    func date(from data: Int) -> String {
+        let date = Date(timeIntervalSince1970: Double(data))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMMM YYYY"
+        return dateFormatter.string(from: date)
     }
     
 }
@@ -67,27 +88,15 @@ extension FullScreenViewController: UICollectionViewDelegate, UICollectionViewDa
         let imageURL = item.sizes[6].url
         photoFether.getImage(url: imageURL) { image in
             cell.configCell(photo: image)
+            DispatchQueue.main.async {
+                self.imageTake?.image = image
+                print("downloaded", image)
+            }
+            
         }
-        print("info", collectionView.numberOfSections)
         
-//        self.indexPath = indexPath
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        print("will \(indexPath.row)")
-     
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        print("end \(indexPath.row)")
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        print(indexPath.row)
-    }
-    
-    
- 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -106,4 +115,27 @@ extension FullScreenViewController: UICollectionViewDelegate, UICollectionViewDa
         return CGFloat(0.0)
     }
     
+}
+
+//MARK: - Save image
+
+extension FullScreenViewController {
+    func weiteToPhotoAlbom(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveError), nil)
+    }
+    
+    @objc func saveError(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        
+        if let error = error {
+            // we got back an error!
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "Your image has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+        
+    }
 }

@@ -71,6 +71,10 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
         guard let vc = storyboard?.instantiateViewController(identifier: "FullScreenViewController") as? FullScreenViewController else {return}
         vc.items = self.items
         vc.indexPath = indexPath
+        let date = items[indexPath.row].date
+        vc.title = vc.date(from: date)
+        let imageURL = items[indexPath.row].sizes[6].url
+        vc.imageURL = imageURL
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
