@@ -143,9 +143,16 @@
                             <constraint firstItem="k4x-yn-pY0" firstAttribute="bottom" secondItem="nER-YH-hUs" secondAttribute="bottom" id="fIA-Y6-goa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pIW-Ws-CAv"/>
+                    <navigationItem key="navigationItem" id="pIW-Ws-CAv">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.arrow.down" catalog="system" id="TkW-Cm-ZZ5">
+                            <connections>
+                                <action selector="saveAction:" destination="Qc3-q2-QRi" id="4NN-2T-FlP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="nER-YH-hUs" id="0u8-9v-N7M"/>
+                        <outlet property="saveButton" destination="TkW-Cm-ZZ5" id="dKn-iO-yLd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQR-u2-vhN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -172,6 +179,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

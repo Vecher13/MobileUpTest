@@ -9,6 +9,7 @@ import UIKit
 
 class FullScreenViewController: UIViewController {
 
+    @IBOutlet var saveButton: UIBarButtonItem!
     @IBOutlet var collectionView: UICollectionView!
     private let photoFether = NetworkPhotoFetcher.shared
     
@@ -29,6 +30,28 @@ class FullScreenViewController: UIViewController {
         }
     }
     
+    @IBAction func saveAction(_ sender: Any) {
+        let cell = collectionView.visibleCells.first
+        scrollViewDidEndDecelerating(collectionView)
+        print()
+    }
+  
+    
+
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        var visibleRect = CGRect()
+
+        visibleRect.origin = collectionView.contentOffset
+        visibleRect.size = collectionView.bounds.size
+
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+
+        guard let indexPath = collectionView.indexPathForItem(at: visiblePoint) else { return }
+        self.title = "\(indexPath.row)"
+        print(indexPath)
+    }
+    
 }
 
 
@@ -45,8 +68,26 @@ extension FullScreenViewController: UICollectionViewDelegate, UICollectionViewDa
         photoFether.getImage(url: imageURL) { image in
             cell.configCell(photo: image)
         }
+        print("info", collectionView.numberOfSections)
+        
+//        self.indexPath = indexPath
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        print("will \(indexPath.row)")
+     
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        print("end \(indexPath.row)")
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        print(indexPath.row)
+    }
+    
+    
+ 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
