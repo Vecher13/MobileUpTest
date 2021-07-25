@@ -12,7 +12,7 @@
         <!--Auth View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AuthViewController" customModule="MobileUpTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthVC" id="BYZ-38-t0r" customClass="AuthViewController" customModule="MobileUpTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,25 +61,69 @@
         <!--Gallery View Controller-->
         <scene sceneID="L6g-tl-MgI">
             <objects>
-                <viewController storyboardIdentifier="gallery" id="sRW-JC-5wO" customClass="GalleryViewController" customModule="MobileUpTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GalleryVC" id="sRW-JC-5wO" customClass="GalleryViewController" customModule="MobileUpTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3og-Yq-UOD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fC9-YH-klO">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JEk-4r-n1l">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="e19-pY-iKL"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e19-pY-iKL" firstAttribute="bottom" secondItem="fC9-YH-klO" secondAttribute="bottom" id="8fg-cl-fnb"/>
+                            <constraint firstItem="fC9-YH-klO" firstAttribute="leading" secondItem="e19-pY-iKL" secondAttribute="leading" id="Esh-uV-K0f"/>
+                            <constraint firstItem="e19-pY-iKL" firstAttribute="trailing" secondItem="fC9-YH-klO" secondAttribute="trailing" id="l8Y-QU-h7P"/>
+                            <constraint firstItem="fC9-YH-klO" firstAttribute="top" secondItem="e19-pY-iKL" secondAttribute="top" id="lss-lY-NiH"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Rlv-d7-WNu">
+                        <barButtonItem key="rightBarButtonItem" title="LogOut" id="QXy-zG-ISv">
+                            <connections>
+                                <action selector="logOutTouch:" destination="sRW-JC-5wO" id="7WC-qj-ZRO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="fC9-YH-klO" id="YC2-9b-frT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJh-Gl-Zm4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829" y="173"/>
+            <point key="canvasLocation" x="2370" y="178.52112676056339"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ChG-o9-Hk2">
+            <objects>
+                <navigationController storyboardIdentifier="GalleryNC" automaticallyAdjustsScrollViewInsets="NO" id="WvW-jX-zMM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kHK-39-bPL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sRW-JC-5wO" kind="relationship" relationship="rootViewController" id="ivO-p4-bcw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Yv-VZ-p5K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1372.5" y="178.52112676056339"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

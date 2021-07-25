@@ -9,11 +9,14 @@ import UIKit
 import VKSdkFramework
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
+   
+    
 
     
 
     var window: UIWindow?
     var authService: AuthService!
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
     static func shared() -> SceneDelegate {
         let scene = UIApplication.shared.connectedScenes.first
@@ -28,6 +31,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         authService = AuthService()
         authService.delegate = self
+        authService.wakeUpSession()
+       
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
@@ -73,14 +78,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
     
     func authServiceSignIn() {
         print(#function)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let secondVC = storyboard.instantiateViewController(withIdentifier: "gallery") as? GalleryViewController else { return }
-        window?.rootViewController = secondVC
+        guard let secondVC = storyboard.instantiateViewController(withIdentifier: "GalleryVC") as? GalleryViewController else { return }
+        let navVC = UINavigationController(rootViewController: secondVC)
+        window?.rootViewController = navVC
 //        show(secondVC, sender: nil)
     }
     
     func authServiceDidSignInFail() {
         print(#function)
+        print("UPS")
+        window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "AuthVC") as? AuthViewController
+        
+    }
+    
+    func logout() {
+//        let authVC = storyboard.instantiateInit
+//        window?.rootViewController
+        print("hello")
     }
 
 

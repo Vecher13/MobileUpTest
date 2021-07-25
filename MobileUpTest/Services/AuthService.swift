@@ -12,6 +12,7 @@ protocol  AuthServiceDelegate: AnyObject {
     func authServiceShouldShow(viewContriller: UIViewController)
     func authServiceSignIn()
     func authServiceDidSignInFail()
+    func logout()
 }
 
 final class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate{
@@ -19,6 +20,8 @@ final class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate{
     
     private let appId = "7907577"
     private let vkSdk: VKSdk
+    private let SceneDel = SceneDelegate.shared()
+    
     
     var token: String? {
         return VKSdk.accessToken()?.accessToken
@@ -51,13 +54,26 @@ final class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate{
         }
     }
     
+    func endSession(){
+        
+        VKSdk.forceLogout()
+//        delegate?.authServiceSignIn()
+        let sb = SceneDel.storyboard
+        SceneDel.window?.rootViewController = sb.instantiateViewController(withIdentifier: "AuthVC") as? AuthViewController
+     
+        delegate?.logout()
+        print("EnDsEssion")
+        
+    }
     
     // MARK: VKSdkDelegate
     
-    func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
+    func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult?) {
         print(#function)
-        if result.token != nil {
+        if result?.token != nil {
             delegate?.authServiceSignIn()
+        } else {
+            print("I Delet Token")
         }
     }
     
@@ -65,6 +81,13 @@ final class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate{
         print(#function)
         delegate?.authServiceDidSignInFail()
     }
+    
+    func vkSdkAuthorizationStateUpdated(with result: VKAuthorizationResult!) {
+        print(#function)
+        print("I wana log out!")
+    }
+    
+ 
     
     // MARK: VKSdkUIDelegate
     
@@ -76,5 +99,7 @@ final class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate{
     func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {
         print(#function)
     }
+    
+    
     
 }
