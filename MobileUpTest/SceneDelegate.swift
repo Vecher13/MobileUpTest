@@ -87,15 +87,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelegate {
     func authServiceDidSignInFail() {
         print(#function)
         print("UPS")
-        window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "AuthVC") as? AuthViewController
+//        window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "AuthVC") as? AuthViewController
         
     }
-    
-    func logout() {
-//        let authVC = storyboard.instantiateInit
-//        window?.rootViewController
-        print("hello")
-    }
+
 
 
 }

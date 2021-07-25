@@ -24,6 +24,9 @@
 		5EAB44CF26ADABB700A018A0 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAB44CD26ADABB700A018A0 /* PhotoCollectionViewCell.swift */; };
 		5EAB44D026ADABB700A018A0 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAB44CE26ADABB700A018A0 /* PhotoCollectionViewCell.xib */; };
 		5EAB44D226ADBCB900A018A0 /* NetworkPhotoFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAB44D126ADBCB900A018A0 /* NetworkPhotoFetcher.swift */; };
+		5EAB44D526ADCE3D00A018A0 /* FullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAB44D426ADCE3D00A018A0 /* FullScreenViewController.swift */; };
+		5EAB44DA26ADD09F00A018A0 /* FullScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAB44D826ADD09F00A018A0 /* FullScreenCollectionViewCell.swift */; };
+		5EAB44DB26ADD09F00A018A0 /* FullScreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAB44D926ADD09F00A018A0 /* FullScreenCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +63,9 @@
 		5EAB44CD26ADABB700A018A0 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		5EAB44CE26ADABB700A018A0 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		5EAB44D126ADBCB900A018A0 /* NetworkPhotoFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPhotoFetcher.swift; sourceTree = "<group>"; };
+		5EAB44D426ADCE3D00A018A0 /* FullScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenViewController.swift; sourceTree = "<group>"; };
+		5EAB44D826ADD09F00A018A0 /* FullScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenCollectionViewCell.swift; sourceTree = "<group>"; };
+		5EAB44D926ADD09F00A018A0 /* FullScreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullScreenCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 				5E1EF91C26A7172D0003C280 /* AppDelegate.swift */,
 				5E1EF91E26A7172D0003C280 /* SceneDelegate.swift */,
 				5E1EF92226A7172D0003C280 /* Main.storyboard */,
+				5EAB44D326ADCDFD00A018A0 /* FullScreen */,
 				5E1EF94526A976500003C280 /* Gallery */,
 				5E1EF94026A766440003C280 /* Auth */,
 				5E1EF93826A751470003C280 /* Services */,
@@ -195,6 +202,32 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5EAB44D326ADCDFD00A018A0 /* FullScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5EAB44D726ADD06E00A018A0 /* Controller */,
+				5EAB44D626ADD06600A018A0 /* View */,
+			);
+			path = FullScreen;
+			sourceTree = "<group>";
+		};
+		5EAB44D626ADD06600A018A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5EAB44D826ADD09F00A018A0 /* FullScreenCollectionViewCell.swift */,
+				5EAB44D926ADD09F00A018A0 /* FullScreenCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5EAB44D726ADD06E00A018A0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5EAB44D426ADCE3D00A018A0 /* FullScreenViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EAB44DB26ADD09F00A018A0 /* FullScreenCollectionViewCell.xib in Resources */,
 				5E1EF92926A717300003C280 /* LaunchScreen.storyboard in Resources */,
 				5EAB44D026ADABB700A018A0 /* PhotoCollectionViewCell.xib in Resources */,
 				5E1EF92626A717300003C280 /* Assets.xcassets in Resources */,
@@ -277,7 +311,9 @@
 				5EAB44D226ADBCB900A018A0 /* NetworkPhotoFetcher.swift in Sources */,
 				5E5F27C026AC77A700DB7A95 /* NetworkDataFetcher.swift in Sources */,
 				5E1EF93726A751310003C280 /* AuthService.swift in Sources */,
+				5EAB44DA26ADD09F00A018A0 /* FullScreenCollectionViewCell.swift in Sources */,
 				5E1EF94926A9B0D60003C280 /* API.swift in Sources */,
+				5EAB44D526ADCE3D00A018A0 /* FullScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

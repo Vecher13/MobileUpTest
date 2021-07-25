@@ -23,7 +23,9 @@ class GalleryViewController: UIViewController {
         self.title = "Mobile Up Gallery"
         fetchPhotos()
        
-        
+    }
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+
     }
     
     func fetchPhotos(){
@@ -35,6 +37,7 @@ class GalleryViewController: UIViewController {
         }
     }
     @IBAction func logOutTouch(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
         AuthService().endSession()
     
     }
@@ -47,7 +50,7 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? PhotoCollectionViewCell else {return UICollectionViewCell()}
-        cell.indicatior.startAnimating()
+        cell.indicator.startAnimating()
         let item = items[indexPath.row]
         let imageURL = item.sizes[6].url
         photoFether.getImage(url: imageURL) { image in
@@ -64,5 +67,11 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
         return UIEdgeInsets (top: 0, left: 0, bottom: 0, right: 0)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let vc = storyboard?.instantiateViewController(identifier: "FullScreenViewController") as? FullScreenViewController else {return}
+        vc.items = self.items
+        vc.indexPath = indexPath
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }

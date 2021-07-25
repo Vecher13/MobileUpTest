@@ -1,5 +1,5 @@
 //
-//  PhotoCollectionViewCell.swift
+//  FullScreenCollectionViewCell.swift
 //  MobileUpTest
 //
 //  Created by Ash on 25.07.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PhotoCollectionViewCell: UICollectionViewCell {
+class FullScreenCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var indicator: UIActivityIndicatorView!

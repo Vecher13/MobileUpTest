@@ -39,7 +39,7 @@
             <size key="customSize" width="230" height="218"/>
             <connections>
                 <outlet property="imageView" destination="DYr-MT-To7" id="Y9E-Ys-Abe"/>
-                <outlet property="indicatior" destination="Zi9-Gp-yCc" id="is7-7S-GXn"/>
+                <outlet property="indicator" destination="Zi9-Gp-yCc" id="is7-7S-GXn"/>
             </connections>
             <point key="canvasLocation" x="262.31884057971018" y="111.83035714285714"/>
         </collectionViewCell>

@@ -12,7 +12,6 @@ protocol  AuthServiceDelegate: AnyObject {
     func authServiceShouldShow(viewContriller: UIViewController)
     func authServiceSignIn()
     func authServiceDidSignInFail()
-    func logout()
 }
 
 final class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate{
@@ -59,11 +58,11 @@ final class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate{
         VKSdk.forceLogout()
 //        delegate?.authServiceSignIn()
         let sb = SceneDel.storyboard
-        SceneDel.window?.rootViewController = sb.instantiateViewController(withIdentifier: "AuthVC") as? AuthViewController
-     
-        delegate?.logout()
-        print("EnDsEssion")
         
+        SceneDel.window?.rootViewController = sb.instantiateViewController(withIdentifier: "AuthVC") as? AuthViewController
+        wakeUpSession()
+        delegate?.authServiceDidSignInFail()
+     
     }
     
     // MARK: VKSdkDelegate
